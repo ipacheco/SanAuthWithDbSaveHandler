@@ -25,7 +25,7 @@ class AuthStorage extends Storage\Session
 
     public function setDbHandler()
     {
-        $tableGateway = new TableGateway('session', $this->getServiceLocator()->get('Zend\Db\Adapter\Adapter'));
+        $tableGateway = new TableGateway('session', $this->getServiceLocator()->get('Zend\Db\Adapter'));
         $saveHandler = new DbTableGateway($tableGateway, new DbTableGatewayOptions());
 
         //open session
